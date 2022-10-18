@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: [],
+    domains: ['i.ytimg.com'],
   },
   swcMinify: true,
   async rewrites() {
