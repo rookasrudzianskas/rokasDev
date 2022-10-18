@@ -3,3 +3,7 @@ postcss.config.js
 tailwind.config.js
 src/aws-exports.js
 out
+src/*.js
+src/*.ts
+src/*.tsx
+

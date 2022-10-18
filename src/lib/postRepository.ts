@@ -93,7 +93,7 @@ export async function getPostMetaBySlug(slug: string) {
   } as PostMeta;
   return post;
 }
-
+// this does not work!
 interface GetAllPostsOptions {
   limit?: number;
   includeDraft?: boolean;
