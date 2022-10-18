@@ -85,7 +85,7 @@ const Footer = () => (
     </div>
 
     <p className="text-center p-5 text-gray-400">
-      Copyright © 2021 notjust.dev All rights reserved.
+      Copyright © {new Date().getFullYear()} rokasDev.dev All rights reserved.
     </p>
   </footer>
 );
