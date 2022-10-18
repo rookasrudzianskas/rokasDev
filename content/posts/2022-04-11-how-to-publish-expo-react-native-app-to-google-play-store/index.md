@@ -10,7 +10,7 @@ tags:
   - Android
   - Google Play Store
 keywords: react native, expo, android, google play store
-author: lukas
+author: rokas
 ---
 import YoutubeVideo from '../../../src/components/shared/YoutubeVideo';
 
@@ -268,10 +268,3 @@ With OTA updates you can release new functionality, quick bug fixes or almost an
 But OTA updates have a few limitations, if you change anything in the ios or android folders, if you change your splash screen, icon, app name, owner, scheme, add new libraries, change your libraries or do anything that is listed in [this](https://docs.expo.dev/workflow/publishing/) article, then you will have to release a normal update. *(Also, I would suggest releasing normal updates after implementing big features or making big changes)*
 
 That's it, we have covered everything that you need to know in order to release your application to the Google Play Store! I hope this guide was clear, comprehensive, and helped you to easily release your application! I also hope that your application will be the next hot app on the store! Good luck and keep coding! 🤓
-
-
-
-
-
-
-
