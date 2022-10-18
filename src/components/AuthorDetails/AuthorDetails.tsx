@@ -54,7 +54,7 @@ const AuthorDetails = ({ authorId }: IAuthorDetails) => {
           {author.buyMeACoffee && (
             <>
               <p className="mt-5 mb-2 font-semibold">
-                If you want to support me personally, you can
+                If you want to be a part of my <span className="font-[600] text-purple-500">craziness</span>, you can 👉
               </p>
               <a
                 href={`https://www.buymeacoffee.com/${author.buyMeACoffee}`}
