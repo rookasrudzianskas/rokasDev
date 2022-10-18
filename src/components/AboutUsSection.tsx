@@ -13,19 +13,21 @@ function AboutUsSection() {
   return (
     <MaxWidthWrapper>
       <section className="flex flex-col items-center mb-10">
-        <div className="flex flex-col md:flex-row items-center my-5 ">
+        <div className="flex flex-col md:space-x-5 md:flex-row items-center my-5 ">
           <div className="flex-1 w-full">
             <Image
-              src={author}
+              src="https://i.ytimg.com/vi/gVt-84I0XME/maxresdefault.jpg"
               layout="responsive"
               alt="profile image"
-              placeholder="blur"
+              width={250}
+              height={150}
+              // placeholder="blur"
             />
           </div>
 
           <div className="flex flex-1 flex-col">
             <h2 className="text-secondary">Meet your instructor</h2>
-            <h1>Vadim Savin</h1>
+            <h1>Rokas Rudzianskas</h1>
             <div className="leading-relaxed">
               <p className="py-2">Hi 👋 Let me introduce myself</p>
               <p className="py-2">
