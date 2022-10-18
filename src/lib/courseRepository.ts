@@ -2,6 +2,7 @@ import fs from 'fs';
 import { bundleMDX } from 'mdx-bundler';
 import { remarkMdxImages } from 'remark-mdx-images';
 import { join, dirname } from 'path';
+import { getFileContents, getFullPath } from './utils';
 
 const rootDir = process.cwd();
 const courseDirectory = join(rootDir, 'content', 'courses');
@@ -14,37 +15,18 @@ interface IGetCourseOptionsByType {
 
 export function getCourseSlugs() {
   return fs
-    .readdirSync(courseDirectory)
-    .map((course) => course.replace(/\.md$/, ''));
+      .readdirSync(courseDirectory)
+      .map((course) => course.replace(/\.md$/, ''));
 }
-
-const getFullPath = (slug: string) => {
-  const realSlug = slug.replace(/\.md$/, '');
-
-  let fullPath = join(courseDirectory, `${realSlug}.md`);
-  if (fs.existsSync(fullPath)) {
-    return fullPath;
-  }
-
-  fullPath = join(courseDirectory, realSlug, `index.md`);
-  if (fs.existsSync(fullPath)) {
-    return fullPath;
-  }
-
-  throw new Error(`MDX file not found: ${fullPath}`);
-};
-
-const getFileContents = (path: string) => fs.readFileSync(path, 'utf8');
 
 export async function getCourseBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, '');
-  const fullPath = getFullPath(slug);
-  const fileContents = getFileContents(fullPath);
+  const fullPath = getFullPath(slug, courseDirectory);
 
-  // TODO check bundleMDXFile
-  const { code, frontmatter } = await bundleMDX(fileContents, {
+  const { code, frontmatter } = await bundleMDX({
+    source: getFileContents(fullPath),
     cwd: dirname(fullPath),
-    xdmOptions: (options) => ({
+    mdxOptions: (options) => ({
       ...options,
       remarkPlugins: [...(options.remarkPlugins ?? []), remarkMdxImages],
     }),
@@ -73,11 +55,10 @@ export async function getCourseBySlug(slug: string) {
 
 export async function getCourseMetaBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, '');
-  const fullPath = getFullPath(slug);
-  const fileContents = getFileContents(fullPath);
+  const fullPath = getFullPath(slug, courseDirectory);
 
-  // TODO check bundleMDXFile
-  const { frontmatter } = await bundleMDX(fileContents, {
+  const { frontmatter } = await bundleMDX({
+    file: fullPath,
     cwd: dirname(fullPath),
   });
 
@@ -93,7 +74,7 @@ export async function getCoursesMetaByType(options: IGetCourseOptionsByType) {
 
   const slugs = getCourseSlugs();
   let courses = (
-    await Promise.all(slugs.map((slug) => getCourseMetaBySlug(slug)))
+      await Promise.all(slugs.map((slug) => getCourseMetaBySlug(slug)))
   ).filter((c) => c && c.type === type) as CourseMeta[];
 
   if (limit && limit > 0) {

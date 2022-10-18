@@ -2,6 +2,7 @@ import fs from 'fs';
 import { bundleMDX } from 'mdx-bundler';
 import { remarkMdxImages } from 'remark-mdx-images';
 import { join, dirname } from 'path';
+import { getFileContents, getFullPath, shuffle } from './utils';
 
 const rootDir = process.cwd();
 const postsDirectory = join(rootDir, 'content', 'posts');
@@ -9,43 +10,23 @@ const outDir = join(rootDir, 'public', 'images', 'content', 'posts');
 
 export function getPostSlugs() {
   return fs
-    .readdirSync(postsDirectory)
-    .map((post) => post.replace(/\.md$/, ''));
+      .readdirSync(postsDirectory)
+      .map((post) => post.replace(/\.md$/, ''));
 }
-
-const getFullPath = (slug: string) => {
-  const realSlug = slug.replace(/\.md$/, '');
-
-  let fullPath = join(postsDirectory, `${realSlug}.md`);
-  if (fs.existsSync(fullPath)) {
-    return fullPath;
-  }
-
-  fullPath = join(postsDirectory, realSlug, `index.md`);
-  if (fs.existsSync(fullPath)) {
-    return fullPath;
-  }
-
-  throw new Error(`MDX file not found: ${fullPath}`);
-};
-
-const getFileContents = (path: string) => fs.readFileSync(path, 'utf8');
 
 export async function getPostBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, '');
   let fullPath;
   try {
-    fullPath = getFullPath(slug);
+    fullPath = getFullPath(slug, postsDirectory);
   } catch (e) {
     return null;
   }
 
-  const fileContents = getFileContents(fullPath);
-
-  // TODO check bundleMDXFile
-  const { code, frontmatter } = await bundleMDX(fileContents, {
+  const { code, frontmatter } = await bundleMDX({
+    source: getFileContents(fullPath),
     cwd: dirname(fullPath),
-    xdmOptions: (options) => ({
+    mdxOptions: (options) => ({
       ...options,
       remarkPlugins: [...(options.remarkPlugins ?? []), remarkMdxImages],
     }),
@@ -76,14 +57,13 @@ export async function getPostMetaBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, '');
   let fullPath;
   try {
-    fullPath = getFullPath(slug);
+    fullPath = getFullPath(slug, postsDirectory);
   } catch (e) {
     return null;
   }
-  const fileContents = getFileContents(fullPath);
 
-  // TODO check bundleMDXFile
-  const { frontmatter } = await bundleMDX(fileContents, {
+  const { frontmatter } = await bundleMDX({
+    file: fullPath,
     cwd: dirname(fullPath),
   });
 
@@ -93,7 +73,7 @@ export async function getPostMetaBySlug(slug: string) {
   } as PostMeta;
   return post;
 }
-// this does not work!
+
 interface GetAllPostsOptions {
   limit?: number;
   includeDraft?: boolean;
@@ -106,7 +86,7 @@ export async function getAllPostsMeta(options: GetAllPostsOptions = {}) {
   // The challenge here is that in order to know if it's draft or not, we need to read it
   const slugs = getPostSlugs();
   let posts = (
-    await Promise.all(slugs.map((slug) => getPostMetaBySlug(slug)))
+      await Promise.all(slugs.map((slug) => getPostMetaBySlug(slug)))
   ).filter((p) => p) as PostMeta[];
 
   if (!includeDraft) {
@@ -115,8 +95,8 @@ export async function getAllPostsMeta(options: GetAllPostsOptions = {}) {
 
   // sort posts by date in descending order
   posts = posts.sort(
-    (post1, post2) =>
-      Date.parse(post2.publishedOn) - Date.parse(post1.publishedOn),
+      (post1, post2) =>
+          Date.parse(post2.publishedOn) - Date.parse(post1.publishedOn),
   );
 
   if (limit && limit > 0) {
@@ -125,3 +105,20 @@ export async function getAllPostsMeta(options: GetAllPostsOptions = {}) {
 
   return posts;
 }
+
+export const getRecommendedPostsMeta = async (
+    forSlug: string,
+    limit: number = 2,
+) => {
+  let slugs = getPostSlugs().filter((s) => s !== forSlug);
+  slugs = shuffle(slugs);
+  if (limit > 0) {
+    slugs = slugs.slice(0, limit);
+  }
+
+  let posts = (
+      await Promise.all(slugs.map((slug) => getPostMetaBySlug(slug)))
+  ).filter((p) => p && !p.draft) as PostMeta[];
+
+  return posts;
+};
