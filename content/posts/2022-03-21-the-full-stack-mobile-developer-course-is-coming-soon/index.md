@@ -7,7 +7,7 @@ category: Courses
 tags:
   - The Full Stack Mobile Developer
 keywords: react native course, fullstack, mobile developer, aws amplify
-author: vadim
+author: rokas
 ---
 
 import Button from '../../../src/components/shared/Button';
@@ -91,7 +91,7 @@ The Batch0 members were crucial in shaping this course. They gave me constructiv
 Don't take my word for it, see what Chris Warren, a student from Batch0, has to say:
 ![Testimonial](./ChrisWarren.png)
 
-## Vadim, WHEN?
+## Rokas, WHEN?
 
 Ok, ok, I also can't wait 🤩
 

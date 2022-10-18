@@ -8,7 +8,7 @@ tags:
   - Hackathon
   -  #CodeForUkraine
 keywords: hackathon, codeForUkraine
-author: vadim
+author: rokas
 ---
 
 import YoutubeVideo from '../../../src/components/shared/YoutubeVideo';
@@ -84,10 +84,10 @@ By the end of the day, you have to submit your project.
 
 <Mentors
 data={[{
-name: "Vadim Savin",
-image: "/images/posts/mentors/vadim.jpg",
-subtitle: "Tutor at notJust.dev",
-url: "https://www.linkedin.com/in/vadimsavin/",
+name: "Rokas Rudzianskas",
+image: "/images/posts/mentors/rokas.jpg",
+subtitle: "Tutor at rokasDev.dev",
+url: "https://www.linkedin.com/in/rokasrudzianskas/",
 }, {
 name: "Lukas Grinevicius",
 image: "/images/posts/mentors/lukas.jpeg",

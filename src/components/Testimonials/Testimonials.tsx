@@ -72,7 +72,7 @@ function Testimonials() {
                 . Making flawless React Native apps in less than 10 hours (in a
                 single stretch) sounds impractical at first but then again
                 it&apos;s @byRookas we&apos;re talking about. Thanks
-                Vadim!
+                Rokas!
               </>
             )}
           />

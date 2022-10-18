@@ -8,7 +8,7 @@ tags:
   - NextJS
   - ReactJS
 keywords: reactjs, nextjs, nextjs blog, mdx blog, tailwind, jamstack
-author: vadim
+author: rokas
 ---
 
 import Counter from './components/Counter.tsx'
@@ -176,7 +176,7 @@ Maaaan, I was blown away by how fast and easy it is to deploy a NextJS app on Ve
 
 ## Open source
 
-The website is [open source on github](https://github.com/Savinvadim1312/notjustdev), so if you want to dive deeper into the details, feel free. If you find any issues, you are welcome to open a PR, it will be much appreciated.
+The website is [open source on github](https://github.com/rookasrudzianskas/byrookas), so if you want to dive deeper into the details, feel free. If you find any issues, you are welcome to open a PR, it will be much appreciated.
 
 ## Future plans
 
@@ -198,4 +198,4 @@ Later we can also incorporate searches and filter by the smallest features. I ha
 
 ## Conclusion
 
-I had a really fun week building the platform and learning NextJS at the same time. If you have any feedback, feel free to tweet it to me [@VadimNotJustDev](https://twitter.com/VadimNotJustDev).
+I had a really fun week building the platform and learning NextJS at the same time. If you have any feedback, feel free to tweet it to me [@byRookas](https://twitter.com/byRookas).

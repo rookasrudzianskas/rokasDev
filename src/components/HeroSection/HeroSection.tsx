@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Button from '../Button';
 import MaxWidthWrapper from '../MaxWidthWrapper';
 import pattern4 from '../../../public/images/brand_elements/pattern_4.svg';
-// import video from '../../../public/images/vadim-headshot.png';
 
 function HeroSection() {
   return (

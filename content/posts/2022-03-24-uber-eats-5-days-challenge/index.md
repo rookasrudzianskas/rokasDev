@@ -8,7 +8,7 @@ tags:
   - Uber Eats Challenge
 keywords: react native course, fullstack, mobile developer, aws amplify, uber eats coding challenge
 hideImageHeader: true
-author: vadim
+author: rokas
 ---
 
 import Button from '../../../src/components/shared/Button';

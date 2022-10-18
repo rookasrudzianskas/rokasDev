@@ -9,7 +9,7 @@ tags:
   - ReactJs
   - Global State Management
 keywords: reactjs, react native, global state management, recoil, recoil.js recoil with react native
-author: vadim
+author: rokas
 ---
 
 import Snack from '../../../src/components/shared/Snack';
@@ -453,9 +453,9 @@ Here is the result of everything we implemented. You can open [the snack here](h
 
 # Conclusion
 
-This is everything you have to know in order to get started with Recoil. The next recommended step is to get into [Asynchronous Data Queries](https://recoiljs.org/docs/guides/asynchronous-data-queries) with recoil. If you are interested in a post about it, shoot me an [email](mailto:vadim@notjust.dev).
+This is everything you have to know in order to get started with Recoil. The next recommended step is to get into [Asynchronous Data Queries](https://recoiljs.org/docs/guides/asynchronous-data-queries) with recoil. If you are interested in a post about it, shoot me an [email](mailto:hello@byrookas.com).
 
-The full source code of the above app can be found on my [github](https://github.com/Savinvadim1312/UEFA2020).
+The full source code of the above app can be found on my [github](https://github.com/rookasrudzianskas/UEFA2020).
 
 Check the video version of this post on my [youtube channel](https://www.youtube.com/watch?v=u_C3GBilvv8&t=306s).
 

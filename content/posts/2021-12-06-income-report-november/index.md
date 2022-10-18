@@ -9,7 +9,7 @@ tags:
   - Business
   - Indie Hacker
 keywords: business, startup, indie hacker, bootstrap, income statement, build in public
-author: vadim
+author: rokas
 ---
 
 Previous month I decided to share publicly my monthly income report, and a lot of people showed interest in this.

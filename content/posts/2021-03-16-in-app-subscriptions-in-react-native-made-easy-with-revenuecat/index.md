@@ -8,7 +8,7 @@ tags:
   - React Native
   - InApp Subscription
   - Monetization
-author: vadim
+author: rokas
 ---
 
 After months of hard work, you finally deployed your app on market and people are loving it. Now you are wondering how you can monetize it.
