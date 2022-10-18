@@ -8,16 +8,16 @@
     "next"
   ],
   "env": {
-    "browser": true,
-    "es2020": true,
-    "node": true,
-    "jest": true
+    "browser": false,
+    "es2020": false,
+    "node": false,
+    "jest": false
   },
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true,
-      "tsx": true
+      "jsx": false,
+      "tsx": false
     },
     "project": "./tsconfig.json"
   },
