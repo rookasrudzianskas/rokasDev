@@ -27,7 +27,7 @@ function NewsletterForm() {
       title="notJust Development Newsletter"
     >
       Join over <span className="text-primary font-bold">{subscribers}</span>{' '}
-      other notJust Developers on the road to success. No spam, unsubscribe at
+      other byRookas Developers on the road to success. No spam, unsubscribe at
       any time.
     </OptInForm>
   );
