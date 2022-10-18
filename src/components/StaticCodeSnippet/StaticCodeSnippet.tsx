@@ -23,6 +23,7 @@ const StaticCodeSnippet = ({ children }: Props) => {
   }
 
   return (
+    //  @ts-ignore
     <Highlight
       {...defaultProps}
       code={code}

@@ -20,7 +20,7 @@ function Testimonials() {
             href="https://twitter.com/madewithmatt/status/1387418917052862466"
             Testimonial={() => (
               <>
-                Just finished @VadimNotJustDev’s Spotify build tutorial. Learned
+                Just finished @byRookas’s Spotify build tutorial. Learned
                 a ton about AWS Amplify, S3, GraphQL and writing clean React
                 Native code.
                 <span className="bg-primary text-gray-600 font-bold  py-1">
@@ -46,7 +46,7 @@ function Testimonials() {
                   {' '}
                   React Native, GraphQL, AWS Amplify and Typescript{' '}
                 </span>
-                , I recommend checking out Vadim Savin tutorials. I finished the
+                , I recommend checking out Rokas Rudzianskas tutorials. I finished the
                 whole Netflix series in 2 days just for fun, and built a front
                 and back end Netflix clone, and now I&apos;m on the the Uber
                 one!
@@ -71,7 +71,7 @@ function Testimonials() {
                 </span>
                 . Making flawless React Native apps in less than 10 hours (in a
                 single stretch) sounds impractical at first but then again
-                it&apos;s @VadimNotJustDev we&apos;re talking about. Thanks
+                it&apos;s @byRookas we&apos;re talking about. Thanks
                 Vadim!
               </>
             )}

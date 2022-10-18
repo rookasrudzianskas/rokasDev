@@ -3,8 +3,6 @@ import Image from 'next/image';
 import MaxWidthWrapper from './MaxWidthWrapper';
 import Button from './Button';
 import { CONTACT_EMAIL } from '../lib/config';
-
-import author from '../../public/images/me.png';
 import awsDA from '../../public/images/certifications/aws-certified-developer-associate.png';
 import awsSAA from '../../public/images/certifications/aws-certified-solutions-architect-associate.png';
 import awsSYSA from '../../public/images/certifications/aws-certified-sysops-administrator-associate.png';

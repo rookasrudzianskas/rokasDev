@@ -10,6 +10,7 @@ interface Props {
 }
 
 const InlineCodeSnippet = ({ children }: Props) => (
+  //  @ts-ignore
   <Highlight
     {...defaultProps}
     code={children as string}

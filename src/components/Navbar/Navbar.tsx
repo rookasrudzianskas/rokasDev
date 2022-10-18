@@ -18,7 +18,7 @@ const Navbar = () => {
             <div className="cursor-pointer w-44">
               <Image
                 src={logo}
-                alt="notJust Development Logo"
+                alt="byRookas Development Logo"
                 layout="responsive"
                 placeholder="blur"
               />

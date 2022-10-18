@@ -12,7 +12,7 @@ function HeroSection() {
         {/* Taglines */}
         <div className="flex-1 mb-5">
           <p className="text-xs text-secondary font-mono">
-            Development | Code | Entrepreneurship
+            Building from 0 | Code | Entrepreneurship
           </p>
 
           <h1 className="text-3xl leading-relaxed">
